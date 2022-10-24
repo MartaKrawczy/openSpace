@@ -1,1 +1,1 @@
-Model of booking desk in Open Space.
+Model of booking desk on Open Space.
