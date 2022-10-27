@@ -3,7 +3,7 @@ package openSpace;
 public class Availability {
 
     //initially the desk is not reserved
-   static void booked(boolean reservation){
+    void booked(boolean reservation){
         if (reservation ==false) {
             reservation = true;
         } else
