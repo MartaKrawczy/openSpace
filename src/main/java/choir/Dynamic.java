@@ -1,5 +1,5 @@
 package choir;
 
-public enum Dynamic {
+enum Dynamic {
     LEGATO,STACCATO,NON_LEGATO,TREMOLO,GLISANDO
 }

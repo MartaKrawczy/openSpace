@@ -1,6 +1,6 @@
 package choir;
 
-public class Bas {
+ class Bas {
     int quantity;
     Volume level;
 }

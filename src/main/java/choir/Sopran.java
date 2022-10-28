@@ -1,6 +1,6 @@
 package choir;
 
-public class Sopran {
+class Sopran {
     int quantity;
     Volume level;
 }

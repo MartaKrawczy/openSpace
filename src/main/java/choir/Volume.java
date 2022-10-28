@@ -1,5 +1,5 @@
 package choir;
 
-public enum Volume {
+enum Volume {
     PIANISSIMO,PIANO,MEZZOPIANO,MEZZOFORTE,FORTE,FORTISSIMO
 }
