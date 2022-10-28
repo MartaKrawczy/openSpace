@@ -4,5 +4,4 @@ import java.util.List;
 
 public class CarRental  {
     List<Car> carList;
-    Reserved reserved;
 }

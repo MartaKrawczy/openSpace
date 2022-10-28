@@ -13,7 +13,6 @@ public class Car {
     boolean childSeatCar;
     boolean gps;
     BigDecimal price;
-
-
+    boolean reserved;
 
 }
