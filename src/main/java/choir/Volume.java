@@ -1,0 +1,5 @@
+package choir;
+
+public enum Volume {
+    PIANISSIMO,PIANO,MEZZOPIANO,MEZZOFORTE,FORTE,FORTISSIMO
+}
