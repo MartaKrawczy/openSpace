@@ -1,5 +1,5 @@
 package iceCreamShop;
 
-public enum Taste {
+ enum Taste {
     VANILLA, CHOCOLATE, LEMON, STRAWBERRY
 }

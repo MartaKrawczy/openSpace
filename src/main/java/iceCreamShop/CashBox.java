@@ -2,10 +2,10 @@ package iceCreamShop;
 
 import java.util.Scanner;
 
-public class CashBox {
+ class CashBox {
 
 
-    public static void main(String[] args) {
+     static void main(String[] args) {
         PriceList iceCream = new PriceList();
         Scanner scan = new Scanner(System.in);
         int quntityOfIce = scan.nextInt();
