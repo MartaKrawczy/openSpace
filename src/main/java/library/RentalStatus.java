@@ -1,5 +1,5 @@
 package library;
 
-public enum RenstalStatus {
+public enum RentalStatus {
     BOOKED, RENT, FREE
 }

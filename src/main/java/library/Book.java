@@ -5,26 +5,30 @@ import libraryDemo.Category;
 import java.util.List;
 
 public class Book {
-   private static long counter = 1L;
+    private static long counter = 1L;
     private Long id;
     private Category category;
     private String author;
     private String title;
     private User owner;
-    private RenstalStatus renstalStatus;
+    private RentalStatus rentalStatus;
+    private RentalStatus bookStatus;
 
 
-    public Book( Category category, String author, String title) {
+    public Book(Category category, String author, String title) {
         this.category = category;
         this.author = author;
         this.title = title;
-        this.renstalStatus = RenstalStatus.FREE;
+        this.rentalStatus = RentalStatus.FREE;
+        this.bookStatus = RentalStatus.FREE;
         this.id = counter;
         counter++;
     }
 
-    public void updateStatus(RenstalStatus renstalStatus, User user) {
-        this.renstalStatus = renstalStatus;
+
+
+    public void updateStatus(RentalStatus renstalStatus, User user) {
+        this.rentalStatus = renstalStatus;
         this.owner = user;
     }
 
@@ -32,19 +36,17 @@ public class Book {
         return this.id;
     }
 
-    public Category getCategory() {
-        return category;
+    public RentalStatus getRentalStatus() {
+        return rentalStatus;
     }
 
-    public String getAuthor() {
-        return author;
+    public RentalStatus getBookStatus() {
+        return bookStatus;
     }
 
-    public String getTitle() {
-        return title;
+    public User getOwner(){
+        return owner;
     }
 
-    public RenstalStatus getRentalStatus() {
-        return renstalStatus;
-    }
+
 }

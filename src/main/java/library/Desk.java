@@ -2,23 +2,23 @@ package library;
 
 public class Desk {
 
-    private static int id = 1;
-    private final int deskId;
-    private boolean isBooked;
-    public Desk() {
-        id++;
-        this.deskId = id;
-  }
+    private final Long deskId;
+    private BookedStatus bookedStatus;
 
-    public boolean isBooked() {
-        return isBooked;
+    public Desk(Long deskId) {
+        this.bookedStatus = BookedStatus.FREE;
+        this.deskId = deskId;
     }
 
-    public void setBooked(boolean booked) {
-        isBooked = booked;
+    public void updateStatus(BookedStatus bookedStatus) {
+        this.bookedStatus = bookedStatus;
     }
 
-    public int getDeskId() {
+    public Long getDeskId() {
         return deskId;
+    }
+
+    public BookedStatus getBookedStatus() {
+        return bookedStatus;
     }
 }
