@@ -12,7 +12,7 @@ public class LibraryService implements Library {
 
     @Override
     public List<Book> getBookList() {
-        return null;
+        return libraryRepository.getAllBooks();
     }
 
     @Override
@@ -44,8 +44,8 @@ public class LibraryService implements Library {
 
     @Override
     public boolean rentBook(User user, Book book) {
-        if(book.getBookStatus() != RentalStatus.RENT && book.getBookStatus() != RentalStatus.BOOKED){
-            libraryRepository.changeRentalStatus(user,book, RentalStatus.RENT);
+        if (book.getBookStatus() != RentalStatus.RENT && book.getBookStatus() != RentalStatus.BOOKED) {
+            libraryRepository.changeRentalStatus(user, book, RentalStatus.RENT);
             return true;
         }
         return false;
@@ -70,17 +70,28 @@ public class LibraryService implements Library {
 
     @Override
     public boolean returnBook(User user, Book book) {
+        if ((book.getBookStatus() == RentalStatus.RENT || book.getBookStatus() == RentalStatus.BOOKED) && (book.getOwner() == user)) {
+            libraryRepository.getUserBooks(user).remove(book);
+            libraryRepository.changeBookStatus(user, book, RentalStatus.FREE);
+            libraryRepository.changeRentalStatus(user, book, RentalStatus.FREE);
+            return true;
+        }
         return false;
     }
 
     @Override
     public boolean returnBook(User user, Long id) {
+        if (user != null) {
+            libraryRepository.getUserBooks(user).remove(returnBook(user, id));
+            libraryRepository.changeBookStatus(user, id, RentalStatus.FREE);
+            return true;
+        }
         return false;
     }
 
     @Override
     public List<Desk> getAvailableDesks() {
-        return null;
+        return libraryRepository.getAllFreeDesks();
     }
 
     @Override
@@ -104,26 +115,42 @@ public class LibraryService implements Library {
 
     @Override
     public boolean checkIn(Desk desk) {
+        if (desk.getBookedStatus() == BookedStatus.FREE && desk != null) {
+            libraryRepository.changeDeskStatus(desk, BookedStatus.BOOKED);
+            return true;
+        }
         return false;
     }
 
     @Override
     public boolean checkIn(Long id) {
+        if (libraryRepository.findById(id) != null && libraryRepository.findById(id).getBookedStatus() == BookedStatus.FREE) {
+            libraryRepository.changeDeskStatus(id, BookedStatus.BOOKED);
+            return true;
+        }
         return false;
     }
 
     @Override
     public boolean checkOut(Desk desk) {
+        if (desk.getBookedStatus() == BookedStatus.BOOKED && desk != null) {
+            libraryRepository.changeDeskStatus(desk, BookedStatus.FREE);
+            return true;
+        }
         return false;
     }
 
     @Override
     public boolean checkOut(Long id) {
+        if (libraryRepository.findById(id) != null && libraryRepository.findById(id).getBookedStatus() == BookedStatus.BOOKED) {
+            libraryRepository.changeDeskStatus(id, BookedStatus.FREE);
+            return true;
+        }
         return false;
     }
 
     @Override
     public List<Desk> getDeskList() {
-        return null;
+        return libraryRepository.getAllDesks();
     }
 }

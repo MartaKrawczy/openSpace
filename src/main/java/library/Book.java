@@ -26,7 +26,6 @@ public class Book {
     }
 
 
-
     public void updateStatus(RentalStatus renstalStatus, User user) {
         this.rentalStatus = renstalStatus;
         this.owner = user;
@@ -44,7 +43,7 @@ public class Book {
         return bookStatus;
     }
 
-    public User getOwner(){
+    public User getOwner() {
         return owner;
     }
 

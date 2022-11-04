@@ -34,19 +34,19 @@ public class LibraryRepository {
         return this.books;
     }
 
-    public List <Book> getUserBooks( User user){
+    public List<Book> getUserBooks(User user) {
         List<Book> userBooks = new ArrayList<Book>();
-        for (Book book: books) {
-            if(book.getOwner()==user);
+        for (Book book : books) {
+            if (book.getOwner() == user) ;
             userBooks.add(book);
         }
         return userBooks;
     }
 
-    public List<Book> getAllFreeBooks(){
+    public List<Book> getAllFreeBooks() {
         List<Book> freeBooks = new ArrayList<Book>();
-        for (Book book: books) {
-            if(book.getBookStatus()==RentalStatus.FREE);
+        for (Book book : books) {
+            if (book.getBookStatus() == RentalStatus.FREE) ;
             freeBooks.add(book);
         }
         return freeBooks;
@@ -84,8 +84,17 @@ public class LibraryRepository {
     }
 
     public void changeRentalStatus(User user, Book book, RentalStatus rent) {
-        if (book!=null){
-            book.updateStatus(rent,user);
+        if (book != null) {
+            book.updateStatus(rent, user);
         }
+    }
+
+    public List<Desk> getAllFreeDesks() {
+        List<Desk> freeDesks = new ArrayList<Desk>();
+        for (Desk desk : desks) {
+            if (desk.getBookedStatus() == BookedStatus.FREE) ;
+            freeDesks.add(desk);
+        }
+        return freeDesks;
     }
 }
