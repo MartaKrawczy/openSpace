@@ -1,4 +1,4 @@
-package designerPatterns.factoryMethod;
+package designerPatterns.creaction.factoryMethod;
 
 public interface GameFactory {
     Game create();

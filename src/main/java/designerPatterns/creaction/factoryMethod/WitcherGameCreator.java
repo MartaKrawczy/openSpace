@@ -1,4 +1,4 @@
-package designerPatterns.factoryMethod;
+package designerPatterns.creaction.factoryMethod;
 
 public class WitcherGameCreator implements GameFactory{
     @Override

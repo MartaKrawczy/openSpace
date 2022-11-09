@@ -1,4 +1,4 @@
-package designerPatterns.builder;
+package designerPatterns.creaction.builder;
 
 public class ToyBuilder {
     private String name;

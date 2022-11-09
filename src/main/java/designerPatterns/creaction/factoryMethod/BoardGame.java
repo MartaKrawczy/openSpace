@@ -1,4 +1,4 @@
-package designerPatterns.factoryMethod;
+package designerPatterns.creaction.factoryMethod;
 
 public class BoardGame implements Game {
 
@@ -14,12 +14,12 @@ public class BoardGame implements Game {
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
     public String getType() {
-        return type;
+        return this.type;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class BoardGame implements Game {
 
     @Override
     public int getMaxNumberOfPlayers() {
-        return maxPlayersNumber;
+        return this.maxPlayersNumber;
     }
 
     @Override

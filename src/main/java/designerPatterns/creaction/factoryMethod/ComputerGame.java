@@ -1,4 +1,4 @@
-package designerPatterns.factoryMethod;
+package designerPatterns.creaction.factoryMethod;
 
 public class ComputerGame implements Game{
     private final String name;
@@ -16,27 +16,27 @@ public class ComputerGame implements Game{
     }
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
     public String getType() {
-        return type;
+        return this.type;
     }
 
     @Override
     public int getMinNumberOfPlayers() {
-        return minNumberOfPlayers;
+        return this.minNumberOfPlayers;
     }
 
     @Override
     public int getMaxNumberOfPlayers() {
-        return maxPlayersNumber;
+        return this.maxPlayersNumber;
     }
 
     @Override
     public boolean canBePlayedRemotely() {
-        return isOnline;
+        return this.isOnline;
     }
 
     @Override

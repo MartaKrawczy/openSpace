@@ -1,4 +1,4 @@
-package designerPatterns.builder;
+package designerPatterns.creaction.builder;
 
 public class ToyBuilderMain extends ToyBuilder{
     public static void main(String[] args) {
